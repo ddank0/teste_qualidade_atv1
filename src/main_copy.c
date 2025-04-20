@@ -23,10 +23,10 @@ int main() {
 
 	float totalPrice;
 
-	totalTickets 	= getTotalTickets();
+	totalTickets = getTotalTickets();
 
 	if (!verifyEntry(totalTickets)) {
-		printf("Erro: A quantidade de bilhetes solicitada não é válida.\n");
+		printf("Erro: A quantidade de bilhetes solicitada nao e valida.\n");
 		return 0; 
     }
 
