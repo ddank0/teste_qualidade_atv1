@@ -65,12 +65,5 @@
 - Limite adulto: 12, 13, 59, 60
 - Limite idoso: 59, 60, 100
 
-## Uso da Documentação
-Esta documentação pode ser usada para:
-1. Implementar testes unitários
-2. Validar a lógica do programa
-3. Garantir a cobertura de todos os casos possíveis
-4. Identificar possíveis erros de implementação 
-
 ## Execução dos testes
-gcc -DTESTING -I. -o test_ticketFunctions test/test_ticketFunctions.c src/ticketFunctions.h test/minunit/minunit.h && .\test_ticketFunctions.exe
+    gcc -DTESTING -I. -o test test/test.c src/ticketFunctions.h test/minunit/minunit.h && .\test.exe
