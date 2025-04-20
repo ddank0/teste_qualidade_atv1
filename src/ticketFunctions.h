@@ -19,12 +19,17 @@ int getPrice(int idade) {
     }
 }
 
+// Declaração da função getAge
+int getAge(int index);
+
+#ifndef TESTING
 int getAge(int index) {
 	int age;
 	printf("Digite a idade do visitante %d: ", index+1);
 	scanf("%d", &age);
 	return age;
 }
+#endif
 
 // int calcTotalPrice(int totalTickets) {
 	

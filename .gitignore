@@ -1,0 +1,32 @@
+# Arquivos compilados
+*.o
+*.obj
+*.out
+*.app
+
+# Arquivos de depuração
+*.dSYM/
+*.su
+*.idb
+*.pdb
+
+# Arquivos de IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Arquivos de build
+build/
+dist/
+Debug/
+Release/
+
+# Arquivos temporários
+*.log
+*.tmp
+*.temp
+
+# Arquivos específicos do Windows
+Thumbs.db
+desktop.ini
