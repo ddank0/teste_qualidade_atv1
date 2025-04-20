@@ -1,8 +1,0 @@
-{
-	"files.associations": {
-		".fantomasignore": "ignore",
-		"*.py": "python",
-		"stdio.h": "c",
-		"ticketfunctions.h": "c"
-	}
-}
