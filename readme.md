@@ -66,4 +66,4 @@
 - Limite idoso: 59, 60, 100
 
 ## Execução dos testes
-    gcc -DTESTING -I. -o test_ticketFunctions test/test_ticketFunctions.c src/ticketFunctions.h test/minunit/minunit.h && .\test_ticketFunctions.exe
+    gcc -DTESTING -I. -o test test/test.c src/ticketFunctions.h test/minunit/minunit.h && .\test.exe
