@@ -1,1 +1,0 @@
-gcc -DTESTING -I. -o test_ticketFunctions test/test_ticketFunctions.c src/ticketFunctions.h test/minunit/minunit.h && .\test_ticketFunctions.exe
