@@ -12,18 +12,18 @@
 
 | Classe | Descrição | Valores | Casos de Teste | Status Esperado |
 |--------|-----------|---------|----------------|-----------------|
-| Criança | Até 12 anos | 0-12 | 0, 6, 12 | R$10 |
-| Adulto | 13 a 59 anos | 13-59 | 13, 30, 59 | R$30 |
-| Idoso | 60 anos ou mais | >=60 | 60, 65, 100 | R$15 |
+| Criança | Até 12 anos | 0-12 | 0, 6, 12 | R$10.00 |
+| Adulto | 13 a 59 anos | 13-59 | 13, 30, 59 | R$30.00 |
+| Idoso | 60 anos ou mais | >=60 | 60, 65, 100 | R$15.00 |
 | Inválida | Idade negativa | <0 | -1, -10 | Inválido |
 
 ## 3. Função calcTotalPrice (cálculo do total)
 
 | Classe | Descrição | Valores | Casos de Teste | Status Esperado |
 |--------|-----------|---------|----------------|-----------------|
-| Válida | Um bilhete | 1 bilhete | Criança (10) | R$10 |
-| Válida | Múltiplos bilhetes | 2-5 bilhetes | 2 bilhetes (criança + adulto) | R$40 |
-| Válida | Múltiplos bilhetes | 2-5 bilhetes | 3 bilhetes (criança + adulto + idoso) | R$55 |
+| Válida | Um bilhete | 1 bilhete | Criança (10) | R$10.00 |
+| Válida | Múltiplos bilhetes | 2-5 bilhetes | 2 bilhetes (criança + adulto) | R$40.00 |
+| Válida | Múltiplos bilhetes | 2-5 bilhetes | 3 bilhetes (criança + adulto + idoso) | R$55.00 |
 | Inválida | Quantidade inválida | >5 bilhetes | 6 bilhetes | Inválido |
 
 ## Casos de Teste Detalhados
@@ -37,20 +37,20 @@
 - Entrada: -1 bilhete → Saída: Inválido
 
 ### 2. Teste de Preços por Idade
-- Idade: 0 anos → Preço: R$10
-- Idade: 12 anos → Preço: R$10
-- Idade: 13 anos → Preço: R$30
-- Idade: 30 anos → Preço: R$30
-- Idade: 59 anos → Preço: R$30
-- Idade: 60 anos → Preço: R$15
-- Idade: 65 anos → Preço: R$15
+- Idade: 0 anos → Preço: R$10.00
+- Idade: 12 anos → Preço: R$10.00
+- Idade: 13 anos → Preço: R$30.00
+- Idade: 30 anos → Preço: R$30.00
+- Idade: 59 anos → Preço: R$30.00
+- Idade: 60 anos → Preço: R$15.00
+- Idade: 65 anos → Preço: R$15.00
 - Idade: -1 ano → Preço: Inválido
 
 ### 3. Teste de Cálculo de Total
-- 1 bilhete (criança) → Total: R$10
-- 2 bilhetes (criança + adulto) → Total: R$40
-- 3 bilhetes (criança + adulto + idoso) → Total: R$55
-- 5 bilhetes (2 crianças + 2 adultos + 1 idoso) → Total: R$95
+- 1 bilhete (criança) → Total: R$10.00
+- 2 bilhetes (criança + adulto) → Total: R$40.00
+- 3 bilhetes (criança + adulto + idoso) → Total: R$55.00
+- 5 bilhetes (2 crianças + 2 adultos + 1 idoso) → Total: R$95.00
 - 6 bilhetes → Total: Inválido
 
 ## Valores Limite
