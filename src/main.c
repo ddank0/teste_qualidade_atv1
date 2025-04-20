@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "ticketFunctions.h"
 
 // Dados de Entrada:
 // ▪ idade: Idade do visitante.
@@ -15,59 +16,21 @@
 // Saída:
 // ▪ Exibir o preço total se a quantidade for permitida, ou uma mensagem de erro se não for.
 
-int verifyEntry(int quantidade) {
-    if (quantidade > 5) {
-        printf("Quantidade de bilhetes excede o limite permitido.\n");
-        return 0; // Quantidade inválida
-    }
-    return 1; // Quantidade válida
-}
-
-int getPrice(int idade) {
-    if (idade <= 12) {
-        return 10; // Preço com desconto para crianças
-    } else if (idade >= 60) {
-        return 15; // Preço com desconto para idosos
-    } else {
-        return 30; // Preço normal para adultos
-    }
-}
-
-int calcTotalPrice(int preco, int quantidade) {
-    return preco * quantidade;
-}
-
-int getAge() {
-	int age;
-	printf("Digite a idade do visitante: ");
-	scanf("%d", &age);
-	return age;
-}
-
-int getTotalTickets() {
-	int totalTickets;
-	printf("Digite a quantidade de bilhetes a serem comprados: ");
-	scanf("%d", &totalTickets);
-	return totalTickets;
-}
 
 int main() {
 
-    int age, totalTickets, price;
+    int totalTickets;
 
 	float totalPrice;
 
-    age 			= getAge();
-	totalTickets 	= getTotalTickets();
+	totalTickets = getTotalTickets();
 
-    if (!verifyEntry(totalTickets)) {
+	if (!verifyEntry(totalTickets)) {
 		printf("Erro: A quantidade de bilhetes solicitada nao e valida.\n");
 		return 0; 
     }
 
-    price = getPrice(age);
-
-    totalPrice = (float) calcTotalPrice(price, totalTickets);
+	totalPrice = calcTotalPrice(totalTickets);
 
     printf("O preco total e: R$%.2f\n", totalPrice);
 
