@@ -66,4 +66,9 @@
 - Limite idoso: 59, 60, 100
 
 ## Execução dos testes
+
+### 1. Linux
+    make test
+    
+### 2. Windows
     gcc -DTESTING -I. -o test test/test.c src/ticketFunctions.h test/minunit/minunit.h && .\test.exe
