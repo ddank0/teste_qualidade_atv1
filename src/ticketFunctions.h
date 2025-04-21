@@ -6,11 +6,18 @@ int verifyEntry(int quantidade) {
         printf("Quantidade de bilhetes excede o limite permitido.\n");
         return 0;
     }
+    else if (quantidade <= 0) {
+        printf("Quantidade de bilhetes invalida.\n");
+        return 0;
+    }
     return 1;
 }
 
 int getPrice(int idade) {
-	if (idade <= 12) {
+    if (idade < 0) {
+        return 0;
+    }
+	else if (idade >= 0 && idade <= 12) {
         return 10; // Preço com desconto para crianças
     } else if (idade >= 60) {
         return 15; // Preço com desconto para idosos
@@ -24,32 +31,22 @@ int getAge(int index);
 
 #ifndef TESTING
 int getAge(int index) {
-	int age;
-	printf("Digite a idade do visitante %d: ", index+1);
-	scanf("%d", &age);
-	return age;
+    int age;
+    do {
+        printf("Digite a idade do visitante %d: ", index+1);
+        scanf("%d", &age);
+        if (age < 0) {
+            printf("Idade invalida! Tente novamente.\n");
+        }
+    } while (age < 0);
+    return age;
 }
 #endif
 
-// int calcTotalPrice(int totalTickets) {
-	
-// 	int age, price;
-// 	float totalPrice;
-
-// 	for (int i = 0; i < totalTickets; i++)
-// 	{
-// 		age 		= getAge(i);
-// 		price 		= getPrice(age);
-// 		totalPrice += (float) price;
-// 	}
-
-// 	return totalPrice;
-// }
-
 float calcTotalPrice(int totalTickets) {
-    float totalPrice = 0.0f; // Inicializa corretamente
+    float totalPrice = 0.0f;
     for (int i = 0; i < totalTickets; i++) {
-        int age = getAge(i);
+        int age   = getAge(i);
         int price = getPrice(age);
         totalPrice += (float)price;
     }
