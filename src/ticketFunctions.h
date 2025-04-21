@@ -45,6 +45,9 @@ int getAge(int index) {
 
 float calcTotalPrice(int totalTickets) {
     float totalPrice = 0.0f;
+    if (verifyEntry(totalTickets) == 0) {
+        return 0;
+    }
     for (int i = 0; i < totalTickets; i++) {
         int age   = getAge(i);
         int price = getPrice(age);

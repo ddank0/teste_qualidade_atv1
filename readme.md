@@ -15,7 +15,7 @@
 | Criança | Até 12 anos | 0-12 | 0, 6, 12 | R$10.00 |
 | Adulto | 13 a 59 anos | 13-59 | 13, 30, 59 | R$30.00 |
 | Idoso | 60 anos ou mais | >=60 | 60, 65, 100 | R$15.00 |
-| Inválida | Idade negativa | <0 | -1, -10 | Inválido |
+| Inválida | Idade negativa | <0 | -1, -10 | R$0.00 |
 
 ## 3. Função calcTotalPrice (cálculo do total)
 
@@ -24,7 +24,8 @@
 | Válida | Um bilhete | 1 bilhete | Criança (10) | R$10.00 |
 | Válida | Múltiplos bilhetes | 2-5 bilhetes | 2 bilhetes (criança + adulto) | R$40.00 |
 | Válida | Múltiplos bilhetes | 2-5 bilhetes | 3 bilhetes (criança + adulto + idoso) | R$55.00 |
-| Inválida | Quantidade inválida | >5 bilhetes | 6 bilhetes | Inválido |
+| Válida | Múltiplos bilhetes | 2-5 bilhetes | 5 bilhetes (2 crianças + 2 adultos + 1 idoso) | R$95.00 |
+| Inválida | Quantidade inválida | >5 bilhetes | 6 bilhetes | R$0.00 |
 
 ## Casos de Teste Detalhados
 
@@ -33,37 +34,42 @@
 - Entrada: 3 bilhetes → Saída: Válido
 - Entrada: 5 bilhetes → Saída: Válido
 - Entrada: 6 bilhetes → Saída: Inválido
+- Entrada: 10 bilhetes → Saída: Inválido
 - Entrada: 0 bilhetes → Saída: Inválido
 - Entrada: -1 bilhete → Saída: Inválido
 
 ### 2. Teste de Preços por Idade
 - Idade: 0 anos → Preço: R$10.00
+- Idade: 6 anos → Preço: R$10.00
 - Idade: 12 anos → Preço: R$10.00
 - Idade: 13 anos → Preço: R$30.00
 - Idade: 30 anos → Preço: R$30.00
 - Idade: 59 anos → Preço: R$30.00
 - Idade: 60 anos → Preço: R$15.00
 - Idade: 65 anos → Preço: R$15.00
-- Idade: -1 ano → Preço: Inválido
+- Idade: 100 anos → Preço: R$15.00
+- Idade: -1 ano → Inválido
+- Idade: -10 anos → Inválido
 
 ### 3. Teste de Cálculo de Total
 - 1 bilhete (criança) → Total: R$10.00
 - 2 bilhetes (criança + adulto) → Total: R$40.00
 - 3 bilhetes (criança + adulto + idoso) → Total: R$55.00
 - 5 bilhetes (2 crianças + 2 adultos + 1 idoso) → Total: R$95.00
-- 6 bilhetes → Total: Inválido
+- 6 bilhetes → Inválido
 
 ## Valores Limite
 
 ### 1. Quantidade de bilhetes
 - Limite inferior: 1
 - Limite superior: 5
-- Valores próximos: 0, 1, 5, 6
+- Valores próximos: 0, 1, 5, 6, 10
 
 ### 2. Idade
-- Limite criança: 0, 12, 13
+- Limite criança: 0, 6, 12, 13
 - Limite adulto: 12, 13, 59, 60
-- Limite idoso: 59, 60, 100
+- Limite idoso: 59, 60, 65, 100
+- Valores inválidos: -1, -10
 
 ## Execução dos testes
 

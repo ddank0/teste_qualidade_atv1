@@ -30,6 +30,10 @@ MU_TEST(test_verify_entry_invalida_6) {
     mu_assert_int_eq(0, verifyEntry(6));
 }
 
+MU_TEST(test_verify_entry_invalida_10) {
+    mu_assert_int_eq(0, verifyEntry(10));
+}
+
 MU_TEST(test_verify_entry_invalida_0) {
     mu_assert_int_eq(0, verifyEntry(0));
 }
@@ -40,6 +44,10 @@ MU_TEST(test_verify_entry_invalida_negativo) {
 
 MU_TEST(test_get_price_0_anos) {
     mu_assert_int_eq(10, getPrice(0));
+}
+
+MU_TEST(test_get_price_6_anos) {
+    mu_assert_int_eq(10, getPrice(6));
 }
 
 MU_TEST(test_get_price_12_anos) {
@@ -66,8 +74,16 @@ MU_TEST(test_get_price_65_anos) {
     mu_assert_int_eq(15, getPrice(65));
 }
 
-MU_TEST(test_get_price_negativo) {
+MU_TEST(test_get_price_100_anos) {
+    mu_assert_int_eq(15, getPrice(100));
+}
+
+MU_TEST(test_get_price_negativo_1) {
     mu_assert_int_eq(0, getPrice(-1));
+}
+
+MU_TEST(test_get_price_negativo_10) {
+    mu_assert_int_eq(0, getPrice(-10));
 }
 
 MU_TEST(test_calc_total_price_um_bilhete_crianca) {
@@ -90,30 +106,40 @@ MU_TEST(test_calc_total_price_cinco_bilhetes_misto) {
     mu_assert_double_eq(95.0, calcTotalPrice(5));
 }
 
+MU_TEST(test_calc_total_price_invalido) {
+    mock_index = 0;
+    mu_assert_int_eq(0, calcTotalPrice(6));
+}
+
 MU_TEST_SUITE(test_suite) {
     // Testes de verificação de entrada
     MU_RUN_TEST(test_verify_entry_valida_1);
     MU_RUN_TEST(test_verify_entry_valida_3);
     MU_RUN_TEST(test_verify_entry_valida_5);
+    MU_RUN_TEST(test_verify_entry_invalida_10);
     MU_RUN_TEST(test_verify_entry_invalida_6);
     MU_RUN_TEST(test_verify_entry_invalida_0);
     MU_RUN_TEST(test_verify_entry_invalida_negativo);
 
     // Testes de preços por idade
     MU_RUN_TEST(test_get_price_0_anos);
+    MU_RUN_TEST(test_get_price_6_anos);
     MU_RUN_TEST(test_get_price_12_anos);
     MU_RUN_TEST(test_get_price_13_anos);
     MU_RUN_TEST(test_get_price_30_anos);
     MU_RUN_TEST(test_get_price_59_anos);
     MU_RUN_TEST(test_get_price_60_anos);
     MU_RUN_TEST(test_get_price_65_anos);
-    MU_RUN_TEST(test_get_price_negativo);
+    MU_RUN_TEST(test_get_price_100_anos);
+    MU_RUN_TEST(test_get_price_negativo_1);
+    MU_RUN_TEST(test_get_price_negativo_10);
 
     // Testes de cálculo de total
     MU_RUN_TEST(test_calc_total_price_um_bilhete_crianca);
     MU_RUN_TEST(test_calc_total_price_dois_bilhetes_misto);
     MU_RUN_TEST(test_calc_total_price_tres_bilhetes_misto);
     MU_RUN_TEST(test_calc_total_price_cinco_bilhetes_misto);
+    MU_RUN_TEST(test_calc_total_price_invalido);
 }
 
 int main() {
