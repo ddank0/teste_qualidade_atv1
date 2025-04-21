@@ -21,6 +21,7 @@ build/
 dist/
 Debug/
 Release/
+bin/
 
 # Arquivos temporários
 *.log

@@ -10,6 +10,7 @@ int mock_index 	= 0;
 
 // Função wrapper que substitui a getAge original
 int getAge(int index) {
+    (void)index; // Indica explicitamente que o parâmetro não é usado
     return mock_ages[mock_index++];
 }
 

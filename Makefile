@@ -11,7 +11,7 @@ $(BIN_DIR)/ticket_system: $(SRC_DIR)/main.c $(SRC_DIR)/ticketFunctions.h
 	$(CC) $(CFLAGS) $(INCLUDES) -o $@ $<
 
 # Regras para os testes
-$(BIN_DIR)/test_ticketFunctions: $(TEST_DIR)/test_ticketFunctions.c $(SRC_DIR)/ticketFunctions.h
+$(BIN_DIR)/test_ticketFunctions: $(TEST_DIR)/test.c $(SRC_DIR)/ticketFunctions.h
 	@mkdir -p $(BIN_DIR)
 	$(CC) $(CFLAGS) $(INCLUDES) -DTESTING -o $@ $<
 
