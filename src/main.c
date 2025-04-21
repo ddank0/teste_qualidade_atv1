@@ -19,7 +19,7 @@
 
 int main() {
 
-    int totalTickets;
+	int totalTickets;
 
 	float totalPrice;
 
@@ -28,11 +28,10 @@ int main() {
 	if (!verifyEntry(totalTickets)) {
 		printf("Erro: A quantidade de bilhetes solicitada nao e valida.\n");
 		return 0; 
-    }
+	}
 
 	totalPrice = calcTotalPrice(totalTickets);
-
-    printf("O preco total e: R$%.2f\n", totalPrice);
+	printf("O preco total e: R$%.2f\n", totalPrice);
 
 	return 0;
 
