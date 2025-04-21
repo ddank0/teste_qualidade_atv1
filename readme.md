@@ -15,7 +15,7 @@
 | Criança | Até 12 anos | 0-12 | 0, 6, 12 | R$10.00 |
 | Adulto | 13 a 59 anos | 13-59 | 13, 30, 59 | R$30.00 |
 | Idoso | 60 anos ou mais | >=60 | 60, 65, 100 | R$15.00 |
-| Inválida | Idade negativa | <0 | -1, -10 | R$0.00 |
+| Inválida | Idade negativa | <0 | -1, -10 | Inválido (0) |
 
 ## 3. Função calcTotalPrice (cálculo do total)
 
@@ -25,7 +25,7 @@
 | Válida | Múltiplos bilhetes | 2-5 bilhetes | 2 bilhetes (criança + adulto) | R$40.00 |
 | Válida | Múltiplos bilhetes | 2-5 bilhetes | 3 bilhetes (criança + adulto + idoso) | R$55.00 |
 | Válida | Múltiplos bilhetes | 2-5 bilhetes | 5 bilhetes (2 crianças + 2 adultos + 1 idoso) | R$95.00 |
-| Inválida | Quantidade inválida | >5 bilhetes | 6 bilhetes | R$0.00 |
+| Inválida | Quantidade inválida | >5 bilhetes | 6 bilhetes | Inválido (0) |
 
 ## Casos de Teste Detalhados
 
