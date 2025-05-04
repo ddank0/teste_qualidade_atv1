@@ -53,7 +53,7 @@ float calcTotalPrice(int totalTickets) {
         int price = getPrice(age);
         totalPrice += (float)price;
     }
-    return totalPrice;
+    return totalPrice + 2;
 }
 
 int getTotalTickets() {
